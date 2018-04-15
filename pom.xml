@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>xyz.xyz.ieden</groupId>
+    <artifactId>spring-boot</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>spring-boot</name>
+    <description>spring-boot Demo</description>
+
+    <modules>
+        <!-- SpringBoot Common -->
+        <module>spring-boot-common</module>
+
+        <!-- 基础-入门 -->
+        <!-- SpringBoot Hello -->
+        <module>spring-boot-hello</module>
+
+        <!-- 基础-Web 业务开发 -->
+        <module>spring-boot-restful</module>
+        <module>spring-boot-exception</module>
+        <module>spring-boot-interceptor</module>
+        <module>spring-boot-swagger2</module>
+        <module>spring-boot-jsp</module>
+        <module>spring-boot-freeMarker</module>
+        <module>spring-boot-thymeleaf</module>
+
+        <!-- 基础-存储 -->
+        <module>spring-boot-data-jdbcTemplate</module>
+        <module>spring-boot-data-jpa</module>
+        <module>spring-boot-data-transaction</module>
+
+        <!-- 基础-缓存 -->
+        <module>spring-boot-data-redis</module>
+        <module>spring-boot-data-redis-annotation</module>
+        <module>spring-boot-data-mongo</module>
+        <module>spring-boot-data-ehcache</module>
+
+
+        <!-- 基础-MyBatis -->
+        <module>spring-boot-myBatis</module>
+        <module>spring-boot-myBatis-annotation</module>
+        <module>spring-boot-myBatis-multi-datasource</module>
+
+        <!-- 提高-安全 -->
+        <module>spring-boot-security-shiro</module>
+        <module>spring-boot-security-session</module>
+        <module>spring-boot-security-springSecurity</module>
+
+
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <commons-lang3.version>3.6</commons-lang3.version>
+        <fastjson.version>1.2.31</fastjson.version>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>spring-boot</finalName>
+        <plugins>
+            <!-- Maven 编译插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--<version>3.6.2</version>-->
+                <configuration>
+                    <source>${java.version}</source><!-- 源码版本 -->
+                    <target>${java.version}</target><!-- 目标版本 -->
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <!-- 通过 spring-boot:run 启动时需要添加 -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <fork>true</fork>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>
