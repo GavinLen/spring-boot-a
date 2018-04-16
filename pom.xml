@@ -50,6 +50,7 @@
         <module>spring-boot-security-shiro</module>
         <module>spring-boot-security-session</module>
         <module>spring-boot-security-springSecurity</module>
+        <module>spring-boot-myBatis-pagehelper</module>
 
 
     </modules>

@@ -12,21 +12,34 @@ import java.util.Objects;
 public class ResultUtils {
 
     public static <T> Boolean isSuccess(Result<T> result) {
-        return Objects.equals(ResultConstant.RET_SUCCESS_CODE, result.getCode());
-    }
+        String code = result.getCode();
+        String msg = result.getMsg();
 
-    public static <T> Result<T> createErrorResult() {
-        Result<T> result = new Result<>(ResultConstant.RET_UNKNOWN_ERROR_CODE, ResultConstant.RET_UNKNOWN_ERROR_MSG);
-        return result;
-    }
-
-    public static <T> Result<T> createResult(String code, String msg) {
-        Result<T> result = new Result<>(code, msg);
-        return result;
+        Boolean flag = false;
+        if (Objects.equals(ResultConstant.RET_SUCCESS_CODE, code) &&Objects.equals(ResultConstant.RET_SUCCESS_MSG, msg)) {
+            flag = true;
+        }
+        return flag;
     }
 
     public static <T> Result<T> createResult() {
-        Result<T> result = new Result<>(ResultConstant.RET_SUCCESS_CODE, ResultConstant.RET_SUCCESS_MSG);
+        Result<T> result = new Result<>();
+        result.setCode(ResultConstant.RET_SUCCESS_CODE);
+        result.setMsg(ResultConstant.RET_SUCCESS_MSG);
+        return result;
+    }
+
+    public static <T> Result<T> error() {
+        Result<T> result = new Result<>();
+        result.setCode(ResultConstant.RET_UNKNOWN_ERROR_CODE);
+        result.setMsg(ResultConstant.RET_UNKNOWN_ERROR_MSG);
+        return result;
+    }
+
+    public static <T> Result<T> error(String code, String msg) {
+        Result<T> result = new Result<>();
+        result.setCode(code);
+        result.setMsg(msg);
         return result;
     }
 
