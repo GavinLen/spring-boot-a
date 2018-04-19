@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>xyz.xyz.ieden</groupId>
+        <groupId>xyz.ieden</groupId>
         <artifactId>spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>xyz.xyz.ieden</groupId>
+    <groupId>xyz.ieden</groupId>
     <artifactId>spring-boot-hello</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -19,7 +19,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>xyz.xyz.ieden</groupId>
+            <groupId>xyz.ieden</groupId>
             <artifactId>spring-boot-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

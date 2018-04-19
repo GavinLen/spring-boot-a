@@ -14,13 +14,24 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>spring-boot-restful</name>
-    <description>spring-boot-restful Demo</description>
+    <description>RestFul Api Demo</description>
 
     <dependencies>
         <dependency>
             <groupId>xyz.xyz.ieden</groupId>
             <artifactId>spring-boot-common</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional><!-- 若不设置则热部署不能起效 -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

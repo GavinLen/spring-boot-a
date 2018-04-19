@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>xyz.xyz.ieden</groupId>
+        <groupId>xyz.ieden</groupId>
         <artifactId>spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>xyz.xyz.ieden</groupId>
+    <groupId>xyz.ieden</groupId>
     <artifactId>spring-boot-common</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -24,6 +24,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <!--<scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -33,11 +34,19 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
-        <!-- 热部署 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- 支持 @ConfigurationProperties 注解 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional><!-- 若不设置则热部署不能起效 -->
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

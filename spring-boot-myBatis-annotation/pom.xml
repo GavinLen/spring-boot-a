@@ -2,14 +2,71 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>spring-boot</artifactId>
         <groupId>xyz.xyz.ieden</groupId>
+        <artifactId>spring-boot</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <groupId>xyz.xyz.ieden</groupId>
     <artifactId>spring-boot-myBatis-annotation</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>spring-boot-myBatis-annotation</name>
+    <description>MyBatis 的 annotation Demo</description>
+
+    <properties>
+        <mybatis.version>1.3.1</mybatis.version>
+        <mybatis-generator.version>1.3.6</mybatis-generator.version>
+        <pagehelper.version>5.1.3</pagehelper.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>xyz.xyz.ieden</groupId>
+            <artifactId>spring-boot-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+        <!-- 支持 @ConfigurationProperties 注解 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>spring-boot-myBatis-annotation</finalName>
+        <plugins>
+            <!-- 通过 spring-boot:run 启动时需要添加 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
